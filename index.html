@@ -4,16 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nazerke - Qyz Uzatu</title>
-    
-    <link rel="stylesheet" href="https://static.tildacdn.pro/css/tilda-grid-3.0.min.css">
-    <link rel="stylesheet" href="https://static.tildacdn.pro/css/tilda-animation-2.0.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <script src="https://static.tildacdn.pro/js/jquery-1.10.2.min.js"></script>
-    <script src="https://static.tildacdn.pro/js/tilda-scripts-3.0.min.js"></script>
-    <script src="https://static.tildacdn.pro/js/tilda-animation-2.0.min.js"></script>
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,27 +16,15 @@
             color: #4a4a4a;
             display: flex;
             justify-content: center;
-            overflow-x: hidden;
         }
         .container {
             width: 100%;
             max-width: 480px;
-            background: #fbf9f5 url('https://static.tildacdn.pro/tild6338-3139-4433-b262-653931666432/bg_paper.jpg') repeat;
+            background-color: #fbf9f5;
             padding: 20px 15px;
             box-shadow: 0 0 20px rgba(0,0,0,0.06);
             text-align: center;
         }
-        
-        /* Простая плавная анимация всплытия */
-        .anim {
-            animation: fadeInUp 1.2s ease-in-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .decor-top {
             width: 100%;
             max-width: 360px;
@@ -133,7 +114,7 @@
             letter-spacing: 1px;
         }
         .rsvp-section {
-            background: rgba(255,255,255,0.6);
+            background: rgba(255,255,255,0.7);
             padding: 20px;
             border-radius: 12px;
             margin-top: 30px;
@@ -142,6 +123,14 @@
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; font-size: 11px; margin-bottom: 5px; font-weight: 600; }
         input[type="text"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+        .radio-option {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        .radio-option input { margin-right: 8px; }
         .submit-btn {
             width: 100%;
             padding: 12px;
@@ -158,29 +147,31 @@
 
     <div class="container">
         
-        <img src="https://static.tildacdn.pro/tild6535-6439-4064-b631-643033333333/header_flowers.png" class="decor-top anim" alt="Flowers">
+        <!-- Используем файлы из твоего репозитория -->
+        <img src="Qyz_uzAtu.png.webp" class="decor-top" alt="Flowers">
         
-        <div class="sub-title anim">QYZ UZATU</div>
-        <h1 class="main-title anim">Назерке</h1>
+        <div class="sub-title">QYZ UZATU</div>
+        <h1 class="main-title">Назерке</h1>
 
-        <img src="https://static.tildacdn.pro/tild3832-3434-4165-b362-383938663866/peony1.png" class="peony-img anim" alt="Peony">
+        <img src="IMG_4634.png.webp" class="peony-img" alt="Peony">
 
-        <p class="poem anim">
+        <p class="poem">
             Қызым, асыл гүлім, арайлым,<br>
             Шаңырақтың кіргізіп тұр шырайын.<br>
             Сол гүлімнің бағы тек ашылсын,<br>
             Ақ батамен ұзатайық ағайын!
         </p>
 
-        <div class="invitation-header anim">ҚҰРМЕТТІ АҒАЙЫН-ТҰҒЫС, БАУЫРЛАР!</div>
-        <p class="invitation-body anim">
+        <div class="invitation-header">ҚҰРМЕТТІ АҒАЙЫН-ТҰҒЫС, БАУЫРЛАР!</div>
+        <p class="invitation-body">
             Сіздерді аяулы қызымыз <strong>Назеркенің</strong> ұзату тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!
         </p>
 
-        <div class="section-title anim">Той салтанаты:</div>
-        <div class="date-str anim">18 КӨРКЕУДЕ (СЕНТЯБРЬ) 2026 ЖЫЛ</div>
+        <!-- Календарь -->
+        <div class="section-title">Той салтанаты:</div>
+        <div class="date-str">18 КӨРКЕУДЕ (СЕНТЯБРЬ) 2026 ЖЫЛ</div>
 
-        <div class="calendar anim">
+        <div class="calendar">
             <div class="day-header">Дс</div><div class="day-header">Сс</div><div class="day-header">Ср</div>
             <div class="day-header">Бс</div><div class="day-header">Жм</div><div class="day-header">Сб</div><div class="day-header">Жб</div>
 
@@ -193,11 +184,12 @@
             <div>28</div><div>29</div><div>30</div>
         </div>
 
-        <p class="anim" style="font-size: 12px; margin-bottom: 20px;">САҒАТ 18:00 - ДЕ БАСТАЛАДЫ</p>
+        <p style="font-size: 12px; margin-bottom: 20px;">САҒАТ 18:00 - ДЕ БАСТАЛАДЫ</p>
 
-        <div class="anim">
+        <!-- Локация -->
+        <div>
             <div class="section-title">Мекен-жайымыз:</div>
-            <p style="font-size: 13px; margin-top: 5px;">АҚТАУ ҚАЛАСЫ, БАСҚҰДЫҚ</p>
+            <p style="font-size: 13px; margin-top: 5px;">АҚТАУ ҚАЛАСЫ, БАСҚУДЫҚ</p>
             <p style="font-size: 14px; font-weight: bold; margin-top: 3px;">"SALTANAT PALACE" МЕЙРАМХАНАСЫ</p>
             
             <a href="https://2gis.kz" target="_blank" class="gis-btn">
@@ -205,7 +197,8 @@
             </a>
         </div>
 
-        <div class="rsvp-section anim">
+        <!-- Опрос -->
+        <div class="rsvp-section">
             <div class="section-title" style="font-size: 26px; text-align: center;">Сауалнама</div>
             <p style="font-size: 12px; text-align: center; margin-bottom: 15px;">Төмендегі сауалнаманы толтырып, тойға қатысуыңызды растауыңызды сұраймыз:</p>
             
@@ -214,6 +207,14 @@
                     <label>АТЫ-ЖӨНІҢІЗ:</label>
                     <input type="text" placeholder="Есіміңіз" required>
                 </div>
+
+                <div class="form-group">
+                    <label>ТОЙҒА КЕЛЕ АЛАСЫЗ БА?</label>
+                    <label class="radio-option"><input type="radio" name="att" checked> Иә, әрине келемін</label>
+                    <label class="radio-option"><input type="radio" name="att"> Жұбыммен келемін</label>
+                    <label class="radio-option"><input type="radio" name="att"> Өкінішке орай, келе алмаймын</label>
+                </div>
+
                 <button type="submit" class="submit-btn">ЖІБЕРУ</button>
             </form>
         </div>
