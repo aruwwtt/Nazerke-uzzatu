@@ -3,113 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qyz Uzatu - Шақыру</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Подключаем красивый шрифт с Google Fonts -->
+    <title>Nazerke - Qyz Uzatu</title>
+    
+    <link rel="stylesheet" href="https://static.tildacdn.pro/css/tilda-grid-3.0.min.css">
+    <link rel="stylesheet" href="https://static.tildacdn.pro/css/tilda-animation-2.0.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <script src="https://static.tildacdn.pro/js/jquery-1.10.2.min.js"></script>
+    <script src="https://static.tildacdn.pro/js/tilda-scripts-3.0.min.js"></script>
+    <script src="https://static.tildacdn.pro/js/tilda-animation-2.0.min.js"></script>
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #fbf9f5;
+            font-family: 'Montserrat', sans-serif;
+            color: #4a4a4a;
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: #fbf9f5 url('https://static.tildacdn.pro/tild6338-3139-4433-b262-653931666432/bg_paper.jpg') repeat;
+            padding: 20px 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        
+        /* Простая плавная анимация всплытия */
+        .anim {
+            animation: fadeInUp 1.2s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .decor-top {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            margin-top: -10px;
+        }
+        .sub-title {
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: #6a7b66;
+            margin-top: 15px;
+        }
+        .main-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 56px;
+            color: #2d4529;
+            margin: 5px 0 20px;
+            font-weight: 500;
+        }
+        .peony-img {
+            width: 85%;
+            max-width: 300px;
+            margin: 10px 0 20px;
+        }
+        .poem {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .invitation-header {
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        .invitation-body {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 32px;
+            color: #2d4529;
+            margin-top: 20px;
+        }
+        .date-str {
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin: 10px 0 15px;
+            font-weight: 500;
+        }
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin: 15px auto 25px;
+            max-width: 310px;
+            font-size: 14px;
+        }
+        .day-header { font-weight: bold; color: #8a8a8a; font-size: 12px; }
+        .active-day {
+            border: 1.5px solid #b8915e;
+            border-radius: 50%;
+            color: #b8915e;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            line-height: 27px;
+            margin: 0 auto;
+        }
+        .gis-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            background-color: #5c7457;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        .rsvp-section {
+            background: rgba(255,255,255,0.6);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 11px; margin-bottom: 5px; font-weight: 600; }
+        input[type="text"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #2d4529;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
         
-        <!-- Шапка с изображениями -->
-        <header class="header">
-            <!-- Замени 'flowers.png' на имя своего файла с картинкой цветов -->
-            <img src="flowers.png" alt="Flowers" class="decor-img">
-            <h2 class="sub-title">QYZ UZATU</h2>
-            <h1 class="main-title">Назерке</h1>
-        </header>
+        <img src="https://static.tildacdn.pro/tild6535-6439-4064-b631-643033333333/header_flowers.png" class="decor-top anim" alt="Flowers">
+        
+        <div class="sub-title anim">QYZ UZATU</div>
+        <h1 class="main-title anim">Назерке</h1>
 
-        <!-- Текст приглашения -->
-        <section class="section text-section">
-            <p class="poem">
-                Қызым, асыл гүлім, арайлым,<br>
-                Шаңырақтың кіргізіп тұр шырайын.<br>
-                Сол гүлімнің бағы тек ашылсын,<br>
-                Ақ батамен ұзатайық ағайын!
-            </p>
+        <img src="https://static.tildacdn.pro/tild3832-3434-4165-b362-383938663866/peony1.png" class="peony-img anim" alt="Peony">
+
+        <p class="poem anim">
+            Қызым, асыл гүлім, арайлым,<br>
+            Шаңырақтың кіргізіп тұр шырайын.<br>
+            Сол гүлімнің бағы тек ашылсын,<br>
+            Ақ батамен ұзатайық ағайын!
+        </p>
+
+        <div class="invitation-header anim">ҚҰРМЕТТІ АҒАЙЫН-ТҰҒЫС, БАУЫРЛАР!</div>
+        <p class="invitation-body anim">
+            Сіздерді аяулы қызымыз <strong>Назеркенің</strong> ұзату тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!
+        </p>
+
+        <div class="section-title anim">Той салтанаты:</div>
+        <div class="date-str anim">18 КӨРКЕУДЕ (СЕНТЯБРЬ) 2026 ЖЫЛ</div>
+
+        <div class="calendar anim">
+            <div class="day-header">Дс</div><div class="day-header">Сс</div><div class="day-header">Ср</div>
+            <div class="day-header">Бс</div><div class="day-header">Жм</div><div class="day-header">Сб</div><div class="day-header">Жб</div>
+
+            <div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+            <div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div>
+            <div>14</div><div>15</div><div>16</div><div>17</div>
+            <div class="active-day">18</div>
+            <div>19</div><div>20</div>
+            <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
+            <div>28</div><div>29</div><div>30</div>
+        </div>
+
+        <p class="anim" style="font-size: 12px; margin-bottom: 20px;">САҒАТ 18:00 - ДЕ БАСТАЛАДЫ</p>
+
+        <div class="anim">
+            <div class="section-title">Мекен-жайымыз:</div>
+            <p style="font-size: 13px; margin-top: 5px;">АҚТАУ ҚАЛАСЫ, БАСҚҰДЫҚ</p>
+            <p style="font-size: 14px; font-weight: bold; margin-top: 3px;">"SALTANAT PALACE" МЕЙРАМХАНАСЫ</p>
             
-            <div class="invitation-text">
-                <h3>ҚҰРМЕТТІ АҒАЙЫН-ТУЫС, БАУЫРЛАР!</h3>
-                <p>Сіздерді аяулы қызымыз <strong>Назеркенің</strong> ұзату тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
-            </div>
-        </section>
-
-        <!-- Календарь (Сентябрь 2026) -->
-        <section class="section calendar-section">
-            <h3 class="section-title">Той салтанаты:</h3>
-            <p class="date-header">18 КӨРКЕУДЕ (СЕНТЯБРЬ) 2026 ЖЫЛ</p>
-            
-            <div class="calendar-grid">
-                <div class="day-name">Дс</div><div class="day-name">Сс</div><div class="day-name">Ср</div>
-                <div class="day-name">Бс</div><div class="day-name">Жм</div><div class="day-name">Сб</div><div class="day-name">Жб</div>
-
-                <!-- Дни месяца (1 сентября 2026 - Вторник) -->
-                <div></div>
-                <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
-                <div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div>
-                <div>14</div><div>15</div><div>16</div><div>17</div>
-                <div class="active-day">18</div> <!-- Выделенная дата -->
-                <div>19</div><div>20</div>
-                <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
-                <div>28</div><div>29</div><div>30</div>
-            </div>
-
-            <p class="time">САҒАТ 18:00 - ДЕ БАСТАЛАДЫ</p>
-        </section>
-
-        <!-- Локация / 2GIS -->
-        <section class="section location-section">
-            <h3 class="section-title">Мекен-жайымыз:</h3>
-            <p>АҚТАУ ҚАЛАСЫ</p>
-            <p class="restaurant-name">"AKTAU PALACE DRAND BALLROOM" MEЙРАМХАНАСЫ</p>
-            
-            <!-- Вставь свою ссылку на 2GIS в href -->
-            <a href="https://2gis.kz/aktau/firm/70000001030696537" target="_blank" class="gis-button">
-                <span>ЖЕТУГЕ ЫҢҒАЙЛЫ БОЛУ ҮШІН 2GIS СІЛТЕМЕСІН ҚОЛДАНЫҢЫЗ</span>
+            <a href="https://2gis.kz" target="_blank" class="gis-btn">
+                2GIS СІЛТЕМЕСІН ҚОЛДАНУ
             </a>
-        </section>
+        </div>
 
-        <!-- Опрос / Сауалнама (RSVP) -->
-        <section class="section rsvp-section">
-            <h3 class="section-title">Сауалнама</h3>
-            <p class="rsvp-desc">Төмендегі сауалнаманы толтырып, тойға қатысуыңызды растауыңызды сұраймыз:</p>
+        <div class="rsvp-section anim">
+            <div class="section-title" style="font-size: 26px; text-align: center;">Сауалнама</div>
+            <p style="font-size: 12px; text-align: center; margin-bottom: 15px;">Төмендегі сауалнаманы толтырып, тойға қатысуыңызды растауыңызды сұраймыз:</p>
             
-            <!-- Замени 'YOUR_FORMSPREE_ID' на свой ID из Formspree -->
-            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="rsvp-form">
+            <form>
                 <div class="form-group">
-                    <label for="name">АТЫ-ЖӨНІҢІЗ:</label>
-                    <input type="text" id="name" name="name" required placeholder="Есіміңізді жазыңыз">
+                    <label>АТЫ-ЖӨНІҢІЗ:</label>
+                    <input type="text" placeholder="Есіміңіз" required>
                 </div>
-
-                <div class="form-group">
-                    <label>ТОЙҒА КЕЛЕ АЛАСЫЗ БА?</label>
-                    
-                    <label class="radio-label">
-                        <input type="radio" name="attendance" value="Иә, әрине келемін" checked>
-                        <span>Иә, әрине келемін</span>
-                    </label>
-
-                    <label class="radio-label">
-                        <input type="radio" name="attendance" value="Жұбыммен келемін">
-                        <span>Жұбыммен келемін</span>
-                    </label>
-
-                    <label class="radio-label">
-                        <input type="radio" name="attendance" value="Өкінішке орай, келе алмаймын">
-                        <span>Өкінішке орай, келе алмаймын</span>
-                    </label>
-                </div>
-
                 <button type="submit" class="submit-btn">ЖІБЕРУ</button>
             </form>
-        </section>
-
-        <footer class="footer">
-            <p>Тойымыздың қадірлі қонағы болыңыздар!</p>
-        </footer>
+        </div>
 
     </div>
 
