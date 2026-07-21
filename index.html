@@ -10,6 +10,7 @@
 <meta property="og:title" content="Назерке - Qyz Uzatu" />
 <meta property="og:description" content="Тойға шақыру" />
 <meta property="og:type" content="website" />
+<meta property="og:image" content="https://static.tildacdn.pro/tild3661-6637-4935-b634-633538633563/ab94020875581ebcca7f.jpg" />
 <!--/metatextblock-->
 <meta name="format-detection" content="telephone=no" />
 <meta http-equiv="x-dns-prefetch-control" content="on">
@@ -24,13 +25,15 @@
 <link rel="stylesheet" href="https://static.tildacdn.pro/css/tilda-animation-2.0.min.css" type="text/css" media="all" />
 <link rel="stylesheet" href="https://static.tildacdn.pro/css/tilda-forms-1.0.min.css" type="text/css" media="all" />
 <script nomodule src="https://static.tildacdn.pro/js/tilda-polyfill-1.0.min.js" charset="utf-8"></script>
-
 <script type="text/javascript">
 function t_onReady(func) {if(document.readyState!='loading') {func();} else {document.addEventListener('DOMContentLoaded',func);}}
 function t_onFuncLoad(funcName,okFunc,time) {if(typeof window[funcName]==='function') {okFunc();} else {setTimeout(function() {t_onFuncLoad(funcName,okFunc,time);},(time||100));}}
 window.tildaApiServiceRootDomain="tildacdn.kz";
+function t396_initialScale(t){var e=document.getElementById("rec"+t);if(e){var i=e.querySelector(".t396__artboard");if(i){window.tn_scale_initial_window_width||(window.tn_scale_initial_window_width=document.documentElement.clientWidth);var a=window.tn_scale_initial_window_width,r=[],n,l=i.getAttribute("data-artboard-screens");if(l){l=l.split(",");for(var o=0;o<l.length;o++)r[o]=parseInt(l[o],10)}else r=[320,480,640,960,1200];for(var o=0;o<r.length;o++){var d=r[o];a>=d&&(n=d)}var _="edit"===window.allrecords.getAttribute("data-tilda-mode"),c="center"===t396_getFieldValue(i,"valign",n,r),s="grid"===t396_getFieldValue(i,"upscale",n,r),w=t396_getFieldValue(i,"height_vh",n,r),g=t396_getFieldValue(i,"height",n,r),u=!!window.opr&&!!window.opr.addons||!!window.opera||-1!==navigator.userAgent.indexOf(" OPR/");if(!_&&c&&!s&&!w&&g&&!u){var h=parseFloat((a/n).toFixed(3)),f=[i,i.querySelector(".t396__carrier"),i.querySelector(".t396__filter")],v=Math.floor(parseInt(g,10)*h)+"px";i.style.setProperty("--initial-scale-height",v);for(var o=0;o<f.length;o++)f[o].style.setProperty("height","var(--initial-scale-height)");t396_scaleInitial__getElementsToScale(i).forEach((function(t){t.style.zoom=h}))}}}}
+function t396_scaleInitial__getElementsToScale(t){return t?Array.prototype.slice.call(t.children).filter((function(t){return t&&(t.classList.contains("t396__elem")||t.classList.contains("t396__group"))})):[]}
+function t396_getFieldValue(t,e,i,a){var r,n=a[a.length-1];if(!(r=i===n?t.getAttribute("data-artboard-"+e):t.getAttribute("data-artboard-"+e+"-res-"+i)))for(var l=0;l<a.length;l++){var o=a[l];if(!(o<=i)&&(r=o===n?t.getAttribute("data-artboard-"+e):t.getAttribute("data-artboard-"+e+"-res-"+o)))break}return r}
+window.TN_SCALE_INITIAL_VER="1.0",window.tn_scale_initial_window_width=null;
 </script>
-
 <script src="https://static.tildacdn.pro/js/jquery-1.10.2.min.js" charset="utf-8"></script>
 <script src="https://static.tildacdn.pro/js/tilda-scripts-3.0.min.js" charset="utf-8" defer></script>
 <script src="https://static.tildacdn.pro/ws/project7301829/tilda-blocks-page144532143.min.js?t=1779891291" charset="utf-8" async></script>
@@ -46,187 +49,169 @@ window.tildaApiServiceRootDomain="tildacdn.kz";
 <script src="https://static.tildacdn.pro/js/tilda-events-1.0.min.js" charset="utf-8" async></script>
 
 <style>
-/* Кастомный шрифт и стиль для имени Назерке */
+/* Фирменный стиль для шрифта имени */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
-.custom-title-name {
+.tn-atom-nazerke {
     font-family: 'Cormorant Garamond', serif !important;
     font-style: italic !important;
-    font-size: 68px !important;
-    color: #2d4529 !important;
+    color: #456754 !important;
+    font-size: 70px !important;
     text-align: center !important;
-    width: 100% !important;
-    line-height: 1 !important;
+    font-weight: 600 !important;
 }
-.calendar-wrapper {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    color: #2d4529;
-    max-width: 320px;
-    margin: 0 auto;
-}
-.calendar-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-.calendar-date {
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-.calendar-grid {
+.calendar-box {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
-    border: 1px solid #2d4529;
-    border-radius: 15px;
-    padding: 15px;
-    font-size: 16px;
+    gap: 6px;
+    max-width: 280px;
+    margin: 15px auto;
+    border: 1px solid #456754;
+    border-radius: 12px;
+    padding: 12px;
+    font-family: Arial, sans-serif;
+    color: #456754;
+    font-size: 14px;
+    text-align: center;
 }
-.calendar-grid div {
+.calendar-box div {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30px;
+    height: 28px;
 }
-.day-header {
-    font-weight: bold;
-    border-bottom: 1px solid #2d4529;
-    padding-bottom: 5px;
-}
-.active-day {
-    border: 2px solid #2d4529;
+.calendar-day-active {
+    border: 2px solid #456754;
     border-radius: 50%;
     font-weight: bold;
-}
-.location-box {
-    text-align: center;
-    color: #2d4529;
-    padding: 20px 10px;
-}
-.location-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-.location-name {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-.gis-button {
-    display: inline-block;
-    background-color: #63a923;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 </style>
 </head>
 
 <body class="t-body" style="margin:0;">
-<div id="allrecords" class="t-records" data-hook="blocks-collection-content-node">
+<div id="allrecords" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="7301829" data-tilda-page-id="144532143" data-tilda-page-alias="uzzatu_nazym" data-tilda-formskey="ffa5b7e755c2c6d3e5794b42d7301829" data-tilda-lazy="yes" data-tilda-root-zone="pro" data-tilda-project-country="KZ">
 
-    <!-- Главный блок с бабочками, птицами и именем -->
-    <div id="rec2315714743" class="r t-rec t-rec_pb_0 t-screenmax-640px" style="padding-bottom:0px;" data-animationappear="off" data-record-type="396">
-        <div class='t396'>
-            <div class="t396__artboard" data-artboard-recid="2315714743" data-artboard-screens="320,480,640,960,1200" data-artboard-height="750">
-                <div class="t396__carrier" style="background-image:url('https://static.tildacdn.pro/tild3934-3939-4363-a339-333766643764/5445048242837512299.jpg'); background-size:cover; background-position:center;"></div>
-                
-                <!-- Имя Назерке -->
-                <div class='t396__elem tn-elem' style="top:330px; left:0; width:100%; z-index:5;">
-                    <div class='tn-atom custom-title-name'>Назерке</div>
-                </div>
-
-                <!-- Qyz Uzatu надпись -->
-                <div class='t396__elem tn-elem' style="top:290px; left:calc(50% - 82px); width:165px; z-index:4;">
-                    <div class='tn-atom'>
-                        <img class='tn-atom__img' src='https://static.tildacdn.pro/tild3636-6138-4937-b363-383539386134/Qyz_uzAtu.png' style="width:100%;"/>
-                    </div>
-                </div>
-
-                <!-- Анимации птиц и цветов -->
-                <div class='t396__elem tn-elem' style="top:0px; left:calc(50% + 38px); width:129px; z-index:3;">
-                    <div class='tn-atom'>
-                        <img class='tn-atom__img' src='https://static.tildacdn.pro/tild3630-6336-4635-b462-313861316266/dfacabbcfd088b2f73d8.gif' style="width:100%;"/>
-                    </div>
-                </div>
-                <div class='t396__elem tn-elem' style="top:520px; left:calc(50% - 160px); width:320px; z-index:3;">
-                    <div class='tn-atom'>
-                        <img class='tn-atom__img' src='https://static.tildacdn.pro/tild3635-6361-4534-a239-653530613136/2e93119a6f4a138992c8.gif' style="width:100%;"/>
-                    </div>
-                </div>
-            </div>
+  <!-- Первый экран Tilda Zero Block (Главная обложка) -->
+  <div id="rec2315714743" class="r t-rec t-rec_pb_0 t-screenmax-640px" style="padding-bottom:0px;" data-animationappear="off" data-record-type="396" data-screen-max="640px">
+    <!--[if IE 8]><style>.t396__carrier{background-image:none !important;}.t396__carrier_ie{background-color:#ffffff !important;}</style><![endif]-->
+    <style>
+    #rec2315714743 .t396__artboard {height:700px;background-color:#ffffff;}
+    #rec2315714743 .t396__filter {height:700px;}
+    #rec2315714743 .t396__carrier{height:700px;background-position:center center;background-attachment:scroll;background-size:cover;background-repeat:no-repeat;}
+    @media screen and (max-width:479px) {
+      #rec2315714743 .t396__artboard {height:750px;background-color:transparent;}
+      #rec2315714743 .t396__carrier {background-position:100% 100%;background-image:url('https://static.tildacdn.pro/tild3934-3939-4363-a339-333766643764/5445048242837512299.jpg');background-attachment:scroll;}
+    }
+    #rec2315714743 .tn-elem[data-elem-id="1728667221924"]{color:#456754;z-index:3;top:20px;left:calc(50% - 600px + 177px);width:560px;height:auto;}
+    @media screen and (max-width:479px){
+      #rec2315714743 .tn-elem[data-elem-id="1728667221924"]{top:331px;left:calc(50% - 160px + -120px);width:560px;}
+    }
+    #rec2315714743 .tn-elem[data-elem-id="1727150520029"]{z-index:3;top:20px;left:calc(50% - 600px + 20px);width:200px;height:auto;}
+    @media screen and (max-width:479px){#rec2315714743 .tn-elem[data-elem-id="1727150520029"]{top:0px;left:calc(50% - 160px + 198px);width:129px;}}
+    #rec2315714743 .tn-elem[data-elem-id="1727150598098"]{z-index:3;top:20px;left:calc(50% - 600px + 20px);width:200px;height:auto;}
+    @media screen and (max-width:479px){#rec2315714743 .tn-elem[data-elem-id="1727150598098"]{top:547px;left:calc(50% - 160px + -78px);width:335px;}}
+    #rec2315714743 .tn-elem[data-elem-id="1727151101886"]{z-index:3;top:20px;left:calc(50% - 600px + 20px);width:200px;height:auto;}
+    @media screen and (max-width:479px){#rec2315714743 .tn-elem[data-elem-id="1727151101886"]{top:317px;left:calc(50% - 160px + 78px);width:165px;}}
+    </style>
+    
+    <div class='t396'>
+      <div class="t396__artboard" data-artboard-recid="2315714743" data-artboard-screens="320,480,640,960,1200" data-artboard-height="700" data-artboard-valign="center" data-artboard-upscale="grid" data-artboard-height-res-320="750">
+        <div class="t396__carrier" data-artboard-recid="2315714743"></div>
+        <div class="t396__filter" data-artboard-recid="2315714743"></div>
+        
+        <!-- Имя: Назерке -->
+        <div class='t396__elem tn-elem tn-elem__23157147431728667221924 t-animate' data-elem-id='1728667221924' data-elem-type='text' data-animate-style="zoomin" data-animate-duration="2.1">
+          <div class='tn-atom tn-atom-nazerke'>Назерке</div>
         </div>
-    </div>
 
-    <!-- Календарь на 18 Сентября -->
-    <div class="r t-rec" style="padding: 40px 15px; background-color: #faf9f6;">
-        <div class="calendar-wrapper">
-            <div class="calendar-title">Той салтанаты:</div>
-            <div class="calendar-date">18 ҚЫРКҮЙЕК 2026 ЖЫЛ</div>
-            <div class="calendar-grid">
-                <div class="day-header">Дс</div>
-                <div class="day-header">Сс</div>
-                <div class="day-header">Ср</div>
-                <div class="day-header">Бс</div>
-                <div class="day-header">Жм</div>
-                <div class="day-header">Сб</div>
-                <div class="day-header">Жб</div>
-                
-                <div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
-                <div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div>
-                <div>14</div><div>15</div><div>16</div><div>17</div><div class="active-day">18</div><div>19</div><div>20</div>
-                <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
-                <div>28</div><div>29</div><div>30</div>
-            </div>
-            <div style="margin-top: 20px; font-size: 18px; font-weight: bold;">САҒАТ 18:00 - ДЕ БАСТАЛАДЫ</div>
+        <!-- GIF Анимации птиц и цветов -->
+        <div class='t396__elem tn-elem tn-elem__23157147431727150520029' data-elem-id='1727150520029' data-elem-type='image'>
+          <div class='tn-atom'>
+            <img class='tn-atom__img t-img' data-original='https://static.tildacdn.pro/tild3630-6336-4635-b462-313861316266/dfacabbcfd088b2f73d8.gif' src='https://thb.tildacdn.pro/tild3630-6336-4635-b462-313861316266/-/resize/20x/dfacabbcfd088b2f73d8.gif' alt=''/>
+          </div>
         </div>
+        <div class='t396__elem tn-elem tn-elem__23157147431727150598098' data-elem-id='1727150598098' data-elem-type='image'>
+          <div class='tn-atom'>
+            <img class='tn-atom__img t-img' data-original='https://static.tildacdn.pro/tild3635-6361-4534-a239-653530613136/2e93119a6f4a138992c8.gif' src='https://thb.tildacdn.pro/tild3635-6361-4534-a239-653530613136/-/resize/20x/2e93119a6f4a138992c8.gif' alt=''/>
+          </div>
+        </div>
+        <div class='t396__elem tn-elem tn-elem__23157147431727151101886' data-elem-id='1727151101886' data-elem-type='image'>
+          <div class='tn-atom'>
+            <img class='tn-atom__img t-img' data-original='https://static.tildacdn.pro/tild3636-6138-4937-b363-383539386134/Qyz_uzAtu.png' src='https://thb.tildacdn.pro/tild3636-6138-4937-b363-383539386134/-/resize/20x/Qyz_uzAtu.png' alt=''/>
+          </div>
+        </div>
+      </div>
     </div>
+    <script>t_onReady(function() {t_onFuncLoad('t396_init',function() {t396_init('2315714743');});});</script>
+  </div>
 
-    <!-- Блок Локации -->
-    <div class="r t-rec" style="padding: 30px 15px; background-color: #faf9f6;">
-        <div class="location-box">
-            <div class="location-title">Мекен - жайымыз:</div>
-            <div class="location-name">Aktau Palace Grand Ballroom</div>
-            <p style="font-size: 14px; margin-bottom: 20px;">ЖЕТУГЕ ЫҢҒАЙЛЫ БОЛУ ҮШІН ТӨМЕНДЕГІ 2ГИС СІЛТЕМЕСІН ҚОЛДАНЫҢЫЗ:</p>
-            <a href="https://2gis.kz/aktau/geo/70000001030696537" target="_blank" class="gis-button">
-                📍 2GIS-ПЕН АШУ
-            </a>
+  <!-- Разделительная линия Tilda -->
+  <div id="rec2315714753" class="r t-rec t-rec_pt_30 t-rec_pb_30 t-screenmax-640px" style="padding-top:30px;padding-bottom:30px;" data-screen-max="640px">
+    <div class="t029">
+      <div class="t029__container t-container">
+        <div class="t029__col t-col t-col_8">
+          <div class="t029__linewrapper" style="opacity:0.2;">
+            <div class="t029__opacity t029__opacity_left" style="background-image: linear-gradient(to left, #000000, rgba(0,0,0,0));"></div>
+            <div class="t-divider t029__line" style="background: #000000;"></div>
+            <div class="t029__opacity t029__opacity_right" style="background-image: linear-gradient(to right, #000000, rgba(0,0,0,0));"></div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Форма / Опросник -->
-    <div id="rec2315714773" class="r t-rec" style="padding: 30px 15px; background-color: #faf9f6;">
-        <div style="max-width: 400px; margin: 0 auto; text-align: center; color: #2d4529;">
-            <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 32px; margin-bottom: 10px;">Сауалнама</div>
-            <p style="font-size: 14px; margin-bottom: 20px;">ТӨМЕНДЕГІ САУАЛНАМАНЫ ТОЛТЫРЫП, ТОЙҒА ҚАТЫСУЫҢЫЗДЫ РАСТАУЫҢЫЗДЫ СҰРАЙМЫЗ:</p>
-            
-            <form id="form2315714773" action="" style="text-align: left;">
-                <div style="margin-bottom: 15px;">
-                    <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px;">АТЫ-ЖӨНІҢІЗ</label>
-                    <input type="text" name="Name" style="width: 100%; padding: 10px; border: 1px solid #2d4529; border-radius: 5px; box-sizing: border-box;" required>
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px;">ТОЙҒА КЕЛЕ АЛАСЫЗ БА?</label>
-                    <label style="display: block; margin: 5px 0;"><input type="radio" name="answer" value="Иә, әрине келемін"> ИӘ, ӘРИНЕ КЕЛЕМІН</label>
-                    <label style="display: block; margin: 5px 0;"><input type="radio" name="answer" value="Жұбыммен келемін"> ЖҰБЫММЕН КЕЛЕМІН</label>
-                    <label style="display: block; margin: 5px 0;"><input type="radio" name="answer" value="Өкінішке орай, келе алмаймын"> ӨКІНІШКЕ ОРАЙ, КЕЛЕ АЛМАЙМЫН</label>
-                </div>
-                <button type="submit" style="width: 100%; background-color: #2d4529; color: white; border: none; padding: 12px; border-radius: 5px; font-weight: bold; cursor: pointer;">ЖІБЕРУ</button>
-            </form>
-            
-            <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; margin-top: 30px;">
-                Тойымыздың қадірлі қонағы болыңыздар!
-            </div>
-        </div>
+  <!-- Блок Календаря -->
+  <div id="rec2315714763" class="r t-rec t-screenmax-640px" style="padding: 20px 0; text-align: center; font-family: Arial, sans-serif; color: #456754;" data-screen-max="640px">
+    <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 32px; margin-bottom: 5px;">Той салтанаты:</div>
+    <div style="font-size: 20px; font-weight: bold; letter-spacing: 1px; margin-bottom: 15px;">18 ҚЫРКҮЙЕК 2026 ЖЫЛ</div>
+    
+    <!-- Календарная сетка на 18 сентября -->
+    <div class="calendar-box">
+      <div style="font-weight:bold;">Дс</div><div style="font-weight:bold;">Сс</div><div style="font-weight:bold;">Ср</div><div style="font-weight:bold;">Бс</div><div style="font-weight:bold;">Жм</div><div style="font-weight:bold;">Сб</div><div style="font-weight:bold;">Жб</div>
+      <div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+      <div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div>
+      <div>14</div><div>15</div><div>16</div><div>17</div><div class="calendar-day-active">18</div><div>19</div><div>20</div>
+      <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
+      <div>28</div><div>29</div><div>30</div>
     </div>
+    
+    <div style="font-size: 16px; font-weight: bold; margin-top: 15px;">САҒАТ 18:00 - ДЕ БАСТАЛАДЫ</div>
+  </div>
+
+  <!-- Блок Локации -->
+  <div id="rec2315714783" class="r t-rec t-screenmax-640px" style="padding: 30px 15px; text-align: center; font-family: Arial, sans-serif; color: #456754;" data-screen-max="640px">
+    <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 30px; margin-bottom: 10px;">Мекен - жайымыз:</div>
+    <div style="font-size: 22px; font-weight: bold; margin-bottom: 15px;">Aktau Palace Grand Ballroom</div>
+    <p style="font-size: 12px; max-width: 280px; margin: 0 auto 20px auto; line-height: 1.4;">ЖЕТУГЕ ЫҢҒАЙЛЫ БОЛУ ҮШІН ТӨМЕНДЕГІ 2ГИС СІЛТЕМЕСІН ҚОЛДАНЫҢЫЗ:</p>
+    <a href="https://2gis.kz/aktau/geo/70000001030696537" target="_blank" style="display: inline-block; background-color: #63a923; color: white; padding: 12px 26px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 14px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      📍 2GIS-ПЕН АШУ
+    </a>
+  </div>
+
+  <!-- Блок Сауалнама (Форма Tilda) -->
+  <div id="rec2315714773" class="r t-rec t-screenmax-640px" style="padding: 30px 15px; background-color: #faf9f6;" data-screen-max="640px">
+    <div style="max-width: 380px; margin: 0 auto; text-align: center; color: #456754; font-family: Arial, sans-serif;">
+      <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 32px; margin-bottom: 10px;">Сауалнама</div>
+      <p style="font-size: 12px; margin-bottom: 20px; line-height: 1.4;">ТӨМЕНДЕГІ САУАЛНАМАНЫ ТОЛТЫРЫП, ТОЙҒА ҚАТЫСУЫҢЫЗДЫ РАСТАУЫҢЫЗДЫ СҰРАЙМЫЗ:</p>
+      
+      <form id="form2315714773" action="" style="text-align: left;">
+        <div style="margin-bottom: 15px;">
+          <label style="display: block; font-size: 11px; font-weight: bold; margin-bottom: 5px;">АТЫ-ЖӨНІҢІЗ</label>
+          <input type="text" name="Name" style="width: 100%; padding: 10px; border: 1px solid #456754; border-radius: 4px; box-sizing: border-box;" required>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <label style="display: block; font-size: 11px; font-weight: bold; margin-bottom: 8px;">ТОЙҒА КЕЛЕ АЛАСЫЗ БА?</label>
+          <label style="display: block; margin: 6px 0; font-size: 13px;"><input type="radio" name="answer" value="Иә, әрине келемін"> ИӘ, ӘРИНЕ КЕЛЕМІН</label>
+          <label style="display: block; margin: 6px 0; font-size: 13px;"><input type="radio" name="answer" value="Жұбыммен келемін"> ЖҰБЫММЕН КЕЛЕМІН</label>
+          <label style="display: block; margin: 6px 0; font-size: 13px;"><input type="radio" name="answer" value="Өкінішке орай, келе алмаймын"> ӨКІНІШКЕ ОРАЙ, КЕЛЕ АЛМАЙМЫН</label>
+        </div>
+        <button type="submit" style="width: 100%; background-color: #456754; color: white; border: none; padding: 12px; border-radius: 4px; font-weight: bold; font-size: 14px; cursor: pointer;">ЖІБЕРУ</button>
+      </form>
+      
+      <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; margin-top: 30px;">
+        Тойымыздың қадірлі қонағы болыңыздар!
+      </div>
+    </div>
+  </div>
 
 </div>
 </body>
