@@ -96,15 +96,12 @@ class="t674__cover t674__cover_fixed t674__cover_repeat"
 id="recorddiv2315714793"
 itemscope itemtype="http://schema.org/ImageObject"> <div 
 class="t674__cover-carrier t-bgimg" data-original="https://static.tildacdn.pro/tild3963-3734-4237-b666-613337383137/WhatsApp_Image_2025-.jpeg"
-<style>
-  /* Находим блок Назым по его точному полю из DevTools и меняем текст */
-  [field="tn_text_1728667221924"] {
-    font-size: 0 !important; /* Прячем слово Назым */
-  }
-
-  [field="tn_text_1728667221924"]::after {
-    content: "Назерке" !important; /* Вставляем Назерке */
-    font-size: 91px !important;    /* Возвращаем оригинальный размер */
-    display: block !important;
-  }
-</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Находим элемент с текстом
+    var nameElem = document.querySelector('[field="tn_text_1728667221924"]');
+    if (nameElem) {
+      nameElem.innerHTML = "Назерке";
+    }
+  });
+</script>
