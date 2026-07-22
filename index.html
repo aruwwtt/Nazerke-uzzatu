@@ -121,3 +121,35 @@ class="t674__cover-carrier t-bgimg" data-original="https://static.tildacdn.pro/t
   replaceTildaText();
   setInterval(replaceTildaText, 100);
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjXClslrxIMPwNfsSGRmd2Xt_RXfHA8hWOw9ykQ2QrBxlZ4GDwFq0Cty0znBbpml1G9A/exec";
+
+    document.addEventListener("click", function(e) {
+      // Ищем клик по кнопке отправки (Жіберу)
+      var btn = e.target.closest('.t-submit, [type="submit"], .tn-atom');
+      if (btn && (btn.innerText.includes("ЖІБЕРУ") || btn.innerText.includes("Жіберу"))) {
+        
+        // Собираем введенное имя и выбранную радиокнопку
+        var nameInput = document.querySelector('input[type="text"]');
+        var selectedRadio = document.querySelector('input[type="radio"]:checked');
+        
+        var nameVal = nameInput ? nameInput.value : '';
+        var answerVal = selectedRadio ? (selectedRadio.nextElementSibling ? selectedRadio.nextElementSibling.innerText : selectedRadio.value) : '';
+
+        if (nameVal) {
+          // Отправляем данные в Google Таблицу
+          var formData = new FormData();
+          formData.append('АТЫ-ЖӨНІҢІЗ', nameVal);
+          formData.append('ТОЙҒА КЕЛЕ АЛАСЫЗ БА?', answerVal);
+
+          fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+          });
+        }
+      }
+    });
+  });
+</script>
