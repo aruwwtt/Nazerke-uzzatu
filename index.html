@@ -150,3 +150,25 @@ class="t674__cover-carrier t-bgimg" data-original="https://static.tildacdn.pro/t
     visibility: hidden !important;
   }
 </style>
+<script>
+  (function() {
+    function fixAllNames() {
+      // 1. Меняем текст во всех блоках, где есть Назым
+      var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      var node;
+      while (node = walker.nextNode()) {
+        if (node.nodeValue && (node.nodeValue.includes('Назым') || node.nodeValue.includes('Назымның') || node.nodeValue.includes('НАЗЫМ'))) {
+          node.nodeValue = node.nodeValue
+            .replace(/Назымның/g, 'Назеркенің')
+            .replace(/Назым/g, 'Назерке')
+            .replace(/НАЗЫМ/g, 'НАЗЕРКЕ');
+        }
+      }
+    }
+
+    // Запускаем сразу и повторяем каждые 100мс (чтобы Тильда не перерисовывала обратно)
+    fixAllNames();
+    document.addEventListener("DOMContentLoaded", fixAllNames);
+    setInterval(fixAllNames, 100);
+  })();
+</script>
