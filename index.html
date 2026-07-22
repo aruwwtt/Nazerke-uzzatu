@@ -96,49 +96,31 @@ class="t674__cover t674__cover_fixed t674__cover_repeat"
 id="recorddiv2315714793"
 itemscope itemtype="http://schema.org/ImageObject"> <div 
 class="t674__cover-carrier t-bgimg" data-original="https://static.tildacdn.pro/tild3963-3734-4237-b666-613337383137/WhatsApp_Image_2025-.jpeg"
-<style>
-  /* Скрываем нижний футер с контактами и логотип Тильды */
-  #rec2315714763,
-  .t-tildalabel,
-  #tildalabel {
-    display: none !important;
-    visibility: hidden !important;
-  }
-</style>
-
-<script>
-  function replaceTildaText() {
-    // Находим все текстовые атомы на странице
-    var atoms = document.querySelectorAll('.tn-atom');
-    atoms.forEach(function(el) {
-      if (el.innerText && el.innerText.trim() === "Назым") {
-        el.innerText = "Назерке";
-      }
-    });
-  }
-
-  // Запускаем подмену сразу и каждые 100мс
-  replaceTildaText();
-  setInterval(replaceTildaText, 100);
-</script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     var GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjXClslrxIMPwNfsSGRmd2Xt_RXfHA8hWOw9ykQ2QrBxlZ4GDwFq0Cty0znBbpml1G9A/exec";
 
+    // Перехватываем клик по кнопке отправки
     document.addEventListener("click", function(e) {
-      // Ищем клик по кнопке отправки (Жіберу)
-      var btn = e.target.closest('.t-submit, [type="submit"], .tn-atom');
-      if (btn && (btn.innerText.includes("ЖІБЕРУ") || btn.innerText.includes("Жіберу"))) {
+      var btn = e.target.closest('.tn-atom, button, a, [role="button"]');
+      if (btn && btn.innerText && btn.innerText.toUpperCase().includes("ЖІБЕРУ")) {
         
-        // Собираем введенное имя и выбранную радиокнопку
-        var nameInput = document.querySelector('input[type="text"]');
+        // Находим текстовое поле (Имя)
+        var nameInput = document.querySelector('input[type="text"], input:not([type="radio"]):not([type="checkbox"])');
+        
+        // Находим выбранную радиокнопку
         var selectedRadio = document.querySelector('input[type="radio"]:checked');
+        var answerVal = "";
         
-        var nameVal = nameInput ? nameInput.value : '';
-        var answerVal = selectedRadio ? (selectedRadio.nextElementSibling ? selectedRadio.nextElementSibling.innerText : selectedRadio.value) : '';
+        if (selectedRadio) {
+          var label = selectedRadio.closest('label') || selectedRadio.parentElement;
+          answerVal = label ? label.innerText.trim() : selectedRadio.value;
+        }
+
+        var nameVal = nameInput ? nameInput.value.trim() : '';
 
         if (nameVal) {
-          // Отправляем данные в Google Таблицу
+          // Отправляем данные в Apps Script
           var formData = new FormData();
           formData.append('АТЫ-ЖӨНІҢІЗ', nameVal);
           formData.append('ТОЙҒА КЕЛЕ АЛАСЫЗ БА?', answerVal);
@@ -147,9 +129,15 @@ class="t674__cover-carrier t-bgimg" data-original="https://static.tildacdn.pro/t
             method: 'POST',
             body: formData,
             mode: 'no-cors'
+          }).then(function() {
+            alert("Рахмет! Жауабыңыз қабылданды.");
+            if (nameInput) nameInput.value = '';
           });
         }
       }
+    }, true);
+  });
+</script>
     });
   });
 </script>
