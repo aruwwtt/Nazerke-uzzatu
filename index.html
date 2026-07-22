@@ -96,21 +96,28 @@ class="t674__cover t674__cover_fixed t674__cover_repeat"
 id="recorddiv2315714793"
 itemscope itemtype="http://schema.org/ImageObject"> <div 
 class="t674__cover-carrier t-bgimg" data-original="https://static.tildacdn.pro/tild3963-3734-4237-b666-613337383137/WhatsApp_Image_2025-.jpeg"
-<script>
-  (function() {
-    function replaceName() {
-      // Ищем все элементы, где может быть текст
-      var elems = document.querySelectorAll('[field="tn_text_1728667221924"], .tn-elem__23157147431728667221924 .tn-atom');
-      elems.forEach(function(el) {
-        if (el.innerText !== "Назерке") {
-          el.innerText = "Назерке";
-        }
-      });
-    }
+<style>
+  /* Скрываем нижний футер с контактами и логотип Тильды */
+  #rec2315714763,
+  .t-tildalabel,
+  #tildalabel {
+    display: none !important;
+    visibility: hidden !important;
+  }
+</style>
 
-    // Запускаем сразу и через слежение за DOM
-    replaceName();
-    var observer = new MutationObserver(replaceName);
-    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
-  })();
+<script>
+  function replaceTildaText() {
+    // Находим все текстовые атомы на странице
+    var atoms = document.querySelectorAll('.tn-atom');
+    atoms.forEach(function(el) {
+      if (el.innerText && el.innerText.trim() === "Назым") {
+        el.innerText = "Назерке";
+      }
+    });
+  }
+
+  // Запускаем подмену сразу и каждые 100мс
+  replaceTildaText();
+  setInterval(replaceTildaText, 100);
 </script>
