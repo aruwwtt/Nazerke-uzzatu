@@ -96,70 +96,39 @@ class="t674__cover t674__cover_fixed t674__cover_repeat"
 id="recorddiv2315714793"
 itemscope itemtype="http://schema.org/ImageObject"> <div 
 class="t674__cover-carrier t-bgimg" data-original="https://static.tildacdn.pro/tild3963-3734-4237-b666-613337383137/WhatsApp_Image_2025-.jpeg"
-<div style="text-align: center; padding: 20px; font-family: sans-serif; max-width: 400px; margin: 0 auto;">
-  <h2 style="font-family: serif; font-size: 28px; color: #333;">Сауалнама</h2>
-  <p style="font-size: 14px; color: #555; margin-bottom: 20px;">
+<div style="text-align: center; padding: 30px 15px; font-family: sans-serif; max-width: 420px; margin: 30px auto; background: #ffffff; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+  <h2 style="font-family: serif; font-size: 28px; color: #333; margin-bottom: 10px;">Сауалнама</h2>
+  <p style="font-size: 13px; color: #666; margin-bottom: 25px; line-height: 1.5;">
     ТӨМЕНДЕГІ САУАЛНАМАНЫ ТОЛТЫРЫП, ТОЙҒА ҚАТЫСУЫҢЫЗДЫ РАСТАУЫҢЫЗДЫ СҰРАЙМЫЗ:
   </p>
 
-  <form id="weddingForm" style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
+  <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
+    
+    <input type="hidden" name="access_key" value="b5deeb13-f5ac-4cee-aff5-d4b21dd1ef3f">
+    <input type="hidden" name="subject" value="Жаңа жауап: Назеркенің Ұзату тойы">
+
     <label style="font-size: 14px; font-weight: bold; color: #333;">АТЫ-ЖӨНІҢІЗ</label>
-    <input type="text" id="guestName" required placeholder="Есіміңізді жазыңыз" style="width: 100%; padding: 12px; border: 1px solid #7a9279; border-radius: 20px; box-sizing: border-box; font-size: 16px;">
+    <input type="text" name="Аты-жөні" required placeholder="Есіміңізді жазыңыз" style="width: 100%; padding: 12px 15px; border: 1px solid #7a9279; border-radius: 20px; box-sizing: border-box; font-size: 16px;">
 
     <label style="font-size: 14px; font-weight: bold; color: #333; margin-top: 10px;">ТОЙҒА КЕЛЕ АЛАСЫЗ БА?</label>
     
-    <label style="display: flex; align-items: center; gap: 10px; font-size: 15px; cursor: pointer;">
-      <input type="radio" name="guestAnswer" value="ИЯ, ӘРИНЕ ҚЕЛЕМІН" checked> ИЯ, ӘРИНЕ ҚЕЛЕМІН
+    <label style="display: flex; align-items: center; gap: 10px; font-size: 15px; cursor: pointer; color: #333;">
+      <input type="radio" name="Жауабы" value="ИЯ, ӘРИНЕ ҚЕЛЕМІН" checked style="accent-color: #4a634e;"> ИЯ, ӘРИНЕ ҚЕЛЕМІН
     </label>
     
-    <label style="display: flex; align-items: center; gap: 10px; font-size: 15px; cursor: pointer;">
-      <input type="radio" name="guestAnswer" value="ЖҰБЫММЕН ҚЕЛЕМІН"> ЖҰБЫММЕН ҚЕЛЕМІН
+    <label style="display: flex; align-items: center; gap: 10px; font-size: 15px; cursor: pointer; color: #333;">
+      <input type="radio" name="Жауабы" value="ЖҰБЫММЕН ҚЕЛЕМІН" style="accent-color: #4a634e;"> ЖҰБЫММЕН ҚЕЛЕМІН
     </label>
     
-    <label style="display: flex; align-items: center; gap: 10px; font-size: 15px; cursor: pointer;">
-      <input type="radio" name="guestAnswer" value="ӨКІНІШКЕ ОРАЙ, ҚЕЛЕ АЛМАЙМЫН"> ӨКІНІШКЕ ОРАЙ, ҚЕЛЕ АЛМАЙМЫН
+    <label style="display: flex; align-items: center; gap: 10px; font-size: 15px; cursor: pointer; color: #333;">
+      <input type="radio" name="Жауабы" value="ӨКІНІШКЕ ОРАЙ, ҚЕЛЕ АЛМАЙМЫН" style="accent-color: #4a634e;"> ӨКІНІШКЕ ОРАЙ, ҚЕЛЕ АЛМАЙМЫН
     </label>
 
-    <button type="submit" id="submitBtn" style="margin-top: 15px; background-color: #4a634e; color: white; padding: 14px; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; text-align: center;">
+    <button type="submit" style="margin-top: 15px; background-color: #4a634e; color: white; padding: 14px; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; text-align: center;">
       ЖІБЕРУ
     </button>
   </form>
-
-  <div id="successMessage" style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border-radius: 10px; font-weight: bold;">
-    Рахмет! Жауабыңыз қабылданды.
-  </div>
 </div>
-
-<script>
-  var GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzfPNCB9LL28zQV_jSqM6-hk8V1iN_Yyz4dr_46OvKxD_l-XwlH1Sqgx1ZWInxOuYfmcg/exec";
-
-  document.getElementById('weddingForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    var btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    btn.innerText = 'Жіберілуде...';
-
-    var nameVal = document.getElementById('guestName').value;
-    var answerVal = document.querySelector('input[name="guestAnswer"]:checked').value;
-
-    var formData = new FormData();
-    formData.append('АТЫ-ЖӨНІҢІЗ', nameVal);
-    formData.append('ТОЙҒА КЕЛЕ АЛАСЫЗ БА?', answerVal);
-
-    fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      body: formData,
-      mode: 'no-cors'
-    }).then(function() {
-      document.getElementById('weddingForm').style.display = 'none';
-      document.getElementById('successMessage').style.display = 'block';
-    }).catch(function(err) {
-      alert('Қате орын алды, қайтадан байқап көрсеңіз.');
-      btn.disabled = false;
-      btn.innerText = 'ЖІБЕРУ';
-    });
-  });
 </script>
     });
   });
